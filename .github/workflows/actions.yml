@@ -11,5 +11,9 @@ jobs:
         uses: actions/hello-world-javascript-action@v1
         with: 
           who-to-greet: Adam
+      - name: Save state
+        run: echo "{time}=$time" >> $GITHUB_ENV
       - name: Log Greeting Time
-        run: echo "${{ steps.greet.outputs.time }}"
+        run: |
+          echo "${{ steps.greet.outputs.time }}"
+          echo "${{ env.time }}" 
