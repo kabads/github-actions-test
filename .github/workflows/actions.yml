@@ -2,6 +2,12 @@ name: Actions Workflow
 
 on: [push]
 
+  # When I first wrote this action, I found a deprecation for passing variables
+  # through the steps.greet.outputs route. Since then, github requires you to 
+  # deliberately declare the variable through an echo which is piped to 
+  # $GITHUB_ENV. 
+  # This $GITHUB_ENV is called env. in other steps. 
+
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
