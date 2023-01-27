@@ -1,6 +1,6 @@
 name: Actions Workflow
 
-on: [push]
+on: [push, pull_request]
 
   # When I first wrote this action, I found a deprecation for passing variables
   # through the steps.greet.outputs route. Since then, github requires you to 
@@ -17,11 +17,6 @@ jobs:
         run: |
           pwd
           ls -al
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          git clone git@github:$GITHUB_REPOSITORY
-          git checkout $GITHUB_SHA
       - name: Checkout
         uses: actions/checkout@v1
       - name: List Files again
