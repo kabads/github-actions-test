@@ -6,8 +6,8 @@ on:
     types: [closed, assigned, opened, reopened]
 
 on: 
-schedule:
-  - cron: "0/5 * * * *"
+  schedule:
+    - cron: "0/5 * * * *"
 
   # When I first wrote this action, I found a deprecation for passing variables
   # through the steps.greet.outputs route. Since then, github requires you to 
