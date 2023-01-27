@@ -12,3 +12,8 @@ jobs:
           node -v
           npm -v 
           go version
+      - name: python command
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
