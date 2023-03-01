@@ -34,4 +34,3 @@ jobs:
         run: |
           echo "${{ steps.greet.outputs.time }}"
           echo "${{ env.time }}" 
-
